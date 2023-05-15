@@ -1,0 +1,6 @@
+- name: setup arch
+  hosts: localhost
+  roles:
+    - base
+    - desktop
+    - applications

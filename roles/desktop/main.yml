@@ -1,0 +1,30 @@
+- name: arch desktop setup
+  package:
+    name:
+      - sway
+      - waybar
+      - dmenu
+      - kitty
+      - mako
+      - grim
+      - slurp
+      - alsa-utils
+      - playerctl
+      - python-pywal
+    state: present
+  become: yes
+
+- name: arch desktop setup (AUR)
+  kewlfft.aur.aur:
+    name:
+      - wmenu
+    use: makepkg
+    state: latest
+  become: yes
+  become_user: aur_builder
+
+- name: config files
+  file:
+    src: "{{ ansible_env.PWD }}/roles/desktop/files/sway.config"
+    path: "~/.config/sway/config"
+    state: link

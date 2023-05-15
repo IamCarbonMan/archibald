@@ -1,0 +1,33 @@
+@import url("../../.cache/wal/colors-custom-gtk3.css");
+
+* {
+    border: none;
+    border-radius: 0;
+    font-family: Terminus;
+    font-size: medium;
+    min-height: 0;
+}
+window#waybar {
+    background: @background;
+    color: @foreground;
+}
+#workspaces button {
+    padding: 0 10px;
+    background: transparent;
+    color: @foreground;
+}
+#workspaces button:hover {
+    box-shadow: inherit;
+    text-shadow: inherit;
+}
+#workspaces button.focused {
+    background: @foreground;
+    color: @background
+}
+#mode, #clock, #memory, #temperature.cpu, #temperature.gpu, #idle_inhibitor {
+    padding: 0 10px;
+    margin: 0 5px;
+    background: transparent;
+    background-color: transparent;
+    color: @foreground;
+}

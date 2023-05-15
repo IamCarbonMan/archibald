@@ -1,0 +1,16 @@
+- name: arch desktop setup
+  package:
+    name:
+      - steam
+      - discord
+    state: present
+  become: yes
+
+- name: arch applications setup (AUR)
+  kewlfft.aur.aur:
+    name:
+      - google-chrome
+    use: makepkg
+    state: latest
+  become: yes
+  become_user: aur_builder
